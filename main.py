@@ -179,11 +179,134 @@ s = 'hello world!'
 # sett = set(in_list)
 # print('22' in sett)
 # print(sett)
+#
+# a = [1,2,3,4]
+# b = a #ссылка на другой объект
+# b2 = a[:]#создание нового объекта
+# a.append(5)
+# print(a,b,b2)
 
-a = [1,2,3,4]
-b = a #ссылка на другой объект
-b2 = a[:]#создание нового объекта
-a.append(5)
-print(a,b,b2)
+#урок 3
+#
+# msg = "Hello world!"
+# for i in range(-12,12):
+#     print(msg[i], end='\n')
+#
+# w = "Abra cad abra"
+# print('ad' in w)
+# print(w.find('cad'))
+# print((len(s)))
+# print(w.count('br'))
+# print(s.upper())
+# print(s)
+# print(s.lower())
+# print(s.islower())
+# print(s)
+# print('123'.isdigit())
+# print('[1, 2, 3]')
+
+# #Полиндром
+# s = str(input())
+# s_check = ''
+# for i in range(len(s)):
+#     if s[i] != s[len(s) - 1 - i]:
+#         print(False)
+#         break
+# else:
+#     print(True)
+#
+# lst = ['Я', 'пишу', 'программы', 'на', 'питоне']
+# print(''.join(lst))
+# print(' '.join(lst))
+# print('\n'.join(lst))
+# print(', '.join(lst))
+#
+
+#
+# s = "Don't   worry   be   happy"
+# print(s.split())
+# print(s.split(' '))
+# print(s.split(maxsplit=1))
+#
+# s = '1 2 3 4 5'
+# strok = s.split()
+# #Как перевести целый массив строк в инт?
+# mass = list(map(int, strok))
+# print(mass)
+#
+# print(list('popopoxh'))
+# print(list('1,2,3'))
+# print(list([1,2,3]))
+
+# lst = [10,True, [1,2], 'abcdg']
+#
+# for i in range(-len(lst), len(lst)):
+#     print(lst[i])
+#
+
+# lst = []
+# add = []
+# n = 5
+# for i in range(1, n+1):
+#     for j in range (i):
+#         lst.append(i)
+# print(lst)
+#
+# add = []
+# n = 5
+# add.append(n)
+# print(add*n)
+#
+# lst = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10]
+# print(max(lst), min(lst), sum(lst))
+#
+# print(min(lst,key=abs))
+
+# a = [-2, 4, -8, 3, 34]
+
+# a.sort()
+# print(a)
+
+# a.sort(key=abs)
+# print(a)
+#
+# b = sorted(a, reverse=True)
+# print(a)
+# print(b)
+#
+# ab = 'abcdefghijklmnopqrstuvwxyz'
+# alph = []
+#
+# for i in range(len(ab)):
+#     alph.append(ab[i]*(i+1))
+#
+# print(alph)
+#
+# s = 0
+# sum = 0
+# while s >= 0:
+#     sum += s
+#     s = int(input())
+# print(sum)
+
+#
+# x,y = 10,20
+# x,y = y,x
+#
+# (x,y)=(100,200)
+#
+# tpl = (123,234,345,456,567,678,789,890)
+# n = int(input())
+# for i in range(len(tpl)):
+#     if n < tpl[i]:
+#         tpl = tpl[:i]+(n,)+tpl[i:]
+#         break
+# else:
+#     tpl = tpl + (n,)
+# print(tpl)
+#
+
+
+
 
 
