@@ -307,6 +307,165 @@ s = 'hello world!'
 #
 
 
+# #Урок 4
+# d = '4'
+# e = 'hi'
+# d,e = e, int(d)
+# print(d,e)
+
+
+# #Словарь
+# person = {
+#     'name':'Masha',
+#     'login': 'Masha',
+#     'age':25,
+# }
+# print(type(person))
+#
+# dict_sample = {
+#     1: 'Masha',
+#     2: 'loh',
+#     True: 'True',
+#     False: 3,
+#     'True': 4,
+#     None: 'error',
+#     None: 'mango'
+# }
+# print(dict_sample)
+#
+# month_dict = {
+#     1:31,
+#     2:28,
+#     3:31,
+#     4:30,
+#     5:31,
+#     6:30,
+#     7:31,
+#     8:31,
+#     9:30,
+#     10:31,
+#     11:30,
+#     12:31
+# }
+#
+# while True:
+#     year = int(input('Введите год'))
+#     month = int(input('Введите месяц'))
+#     if year == month == 0:
+#         break
+#     else:
+#         if year % 4 == 0 and month == 2:
+#             print(year, 29)
+#         else:
+#             print(year, month_dict[month])
+#
+#
+
+
+#
+# x = dict(name = 'masha',name2 = 'petya')
+# print(x)
+# letters = ['a', 'b', 'c', 'd','e']
+# numbers = [1,2,3,4]
+# d = dict(zip(letters, numbers))
+# d2 = dict(zip(numbers,letters))
+#
+# print(d,d2)
+#
+# chisla = {1:'один',2:'два',3:'три',4:'четыре',5:'пять',6:'шесть',7:'семь',8:'восемь',9:'девять',
+#           0:'ноль'}
+# x = int(input())
+# for i in list(str(x)):
+#     print(chisla[int(i)], end=' ')
+#
+# Хэш - таблицы
+#
+# sort_dict = {'a':1, 'n':2, 'k':90, 'e':3}
+# for key in sorted(sort_dict):
+#     print(key)
+# for key, val in sort_dict.items():
+#     print(val)
+#
+# line = 'abracadabra'
+# abd = {}
+# for i in line:
+#     if i in abd:
+#         abd[i]+=1
+#     else:
+#         abd[i] = 1
+# print(abd)
+
+#
+# abd.clear() #чистим
+# print(abd)
+#
+# defc = abd
+# print(defc)
+# abd['e']=3
+# print(defc)
+#
+# print(abd.get('a'))
+# print(abd.get('f',0))
+# print(abd.get('f'))
+# print(abd.setdefault('f',0))
+# print(abd)
+# #
+# words = {}
+# line = 'abjb ;j ij perofj pojr fwefj wf jld-kme f0ik ij jmdmsodkmpsd'
+# for i in line.split():
+#     if i not in words.keys():
+#         words[i]=0
+#     words[i] += 1
+#
+# print(words)
+
+#fromitems
+#items - выедает пары - кортежи - для всех элементов словаря
+#
+# line = '2 4 6 4 3 6 6 4 20 49 4309 503 3 305 943 404 45'
+# lst = list(map(int, line.split()))
+# dct = {}
+# #for i in range(len(lst)):
+# for pos, num in enumerate(lst):
+#     if num not in dct:
+#         dct[num] = []
+#     dct[num].append(pos)
+# print(dct)
+
+#update - соединение словарей
+#pop и popitem
+
+#Анаграммы
+line = 'monopolo oloponodm'
+dct = {}
+
+
+
+for word in line.split():
+    dct[word] = {}
+    for letter in word:
+        if letter not in dct[word]:
+            dct[word][letter] = 0
+        dct[word][letter]+=1
+
+a = {}
+for i in dct.values():
+    if i == a:
+        print('Aмаграмма!')
+        break
+    a = i
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
