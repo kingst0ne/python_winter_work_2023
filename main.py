@@ -436,35 +436,132 @@ s = 'hello world!'
 #pop и popitem
 
 #Анаграммы
-line = 'monopolo oloponodm'
-dct = {}
+# line = 'monopolo oloponodm'
+# dct = {}
+#
+#
+#
+# for word in line.split():
+#     dct[word] = {}
+#     for letter in word:
+#         if letter not in dct[word]:
+#             dct[word][letter] = 0
+#         dct[word][letter]+=1
+#
+# a = {}
+# for i in dct.values():
+#     if i == a:
+#         print('Aмаграмма!')
+#         break
+#     a = i
 
 
 
-for word in line.split():
-    dct[word] = {}
-    for letter in word:
-        if letter not in dct[word]:
-            dct[word][letter] = 0
-        dct[word][letter]+=1
+# Урок 5
+# n = int(input('Введите число n:'))
+# dct = {}
+# for i in range(n):
+#     sinonim1, sinonim2 = input().split()
+#     dct[sinonim1] = sinonim2
+#     dct[sinonim2] = sinonim1
+#     pass
+#
+# while True:
+#     slovo = input()
+#     if slovo == 'stop':
+#         break
+#     print(dct.get(slovo,'нет синонима в словаре'))
+#
+# print(round(1,1))
+# print(round(1,5))
+# print(round(2,5))
+# print(divmod(15,6))
+#
+# print(0b10 + 0b10)
+# print(bin(4))
+#
+# print(0o7 + 0o7)
+# print(oct(14))
+#
+# for i in range(20):
+#     print(hex(i))
+#
+#
+#
+# sec = int(input())
+#
+# sec_to_print = sec%60
+# min = sec % 3600 // 60
+# min_to_print = min%60
+# hours = min // 60
+# hours_to_print = hours%24
+# days = hours // 24
+# print(f'days:{days}, H:{hours_to_print}, M:{min_to_print}, S:{sec_to_print}')
 
-a = {}
-for i in dct.values():
-    if i == a:
-        print('Aмаграмма!')
-        break
-    a = i
+#
+# n = int(input())
+# for i in range(2, int((n)**0.5)+1):
+#     if n % i == 0:
+#         print('Составное')
+#         break
+# else:
+#     print('Простое')
+#
+# print(int(True))
+# print(True+True)
+# print(chr(1025))
+# for i in range(1102, 1200):
+#     print(chr(i))
+#
+# start = ord('A')
+# end = ord('Z')
+# for i in range(start,end+1):
+#     print(i, chr(i))
 
-
-
-
-
-
-
-
-
-
-
+#not - самый главный
+#потом and
+#потом or
+#
+# year = int(input())
+# if year % 4 == 0 and year%100 != 0 or year%400 == 0:
+#     print('Vis')
+# else:
+#     print('not vis')
+#
+# s = input()
+# word_vowels = []
+# word_conson = []
+# vowels = ['a','e','i','o','u']
+# iterator = 0
+# for i in s:
+#     if i in vowels:
+#         word_vowels.append(i)
+#     else:
+#         word_conson.append(i)
+# word = []
+# if abs(len(word_vowels) - len(word_conson)) <= 1:
+#     if len(word_conson) > len(word_vowels):
+#         for i in range(len(s)):
+#             if i % 2 == 0:
+#                 word.append(word_conson[-1])
+#                 word_conson = word_conson[:-1]
+#             else:
+#                 word.append(word_vowels[-1])
+#                 word_vowels = word_vowels[:-1]
+#     else:
+#         for i in range(len(s)):
+#             if i % 2 == 0:
+#                 word.append(word_vowels[-1])
+#                 word_vowels = word_vowels[:-1]
+#             else:
+#                 word.append(word_conson[-1])
+#                 word_conson = word_conson[:-1]
+#
+#     print(s, '->', ''.join(word))
+# else:
+#     print(s, '->', 'Impossible')
+#
+#
 
 
 
