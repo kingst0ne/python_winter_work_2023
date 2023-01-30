@@ -533,6 +533,7 @@ word_vowels = []
 word_conson = []
 vowels = ['a','e','i','o','u']
 
+#Создание массивов по глассным/согласным
 for i in s:
     if i in vowels:
         word_vowels.append(i)
@@ -540,8 +541,10 @@ for i in s:
         word_conson.append(i)
 
 word = []
-if abs(len(word_vowels) - len(word_conson)) <= 1:
-    if len(word_conson) > len(word_vowels):
+if abs(len(word_vowels) - len(word_conson)) <= 1: #Проверка на длину массивов,
+    # можно ли поставить гласные между согласными?
+    if len(word_conson) > len(word_vowels): #Проверка, какой из массивов больше - в зависимости от того,
+        # какой больше, копируем в разные массивы для переноса
         word_transfer1,word_transfer2 = word_conson.copy(),word_vowels.copy()
     else:
         word_transfer1,word_transfer2 = word_vowels.copy(),word_conson.copy()
