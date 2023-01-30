@@ -527,41 +527,34 @@ s = 'hello world!'
 #     print('Vis')
 # else:
 #     print('not vis')
-#
-# s = input()
-# word_vowels = []
-# word_conson = []
-# vowels = ['a','e','i','o','u']
-# iterator = 0
-# for i in s:
-#     if i in vowels:
-#         word_vowels.append(i)
-#     else:
-#         word_conson.append(i)
-# word = []
-# if abs(len(word_vowels) - len(word_conson)) <= 1:
-#     if len(word_conson) > len(word_vowels):
-#         for i in range(len(s)):
-#             if i % 2 == 0:
-#                 word.append(word_conson[-1])
-#                 word_conson = word_conson[:-1]
-#             else:
-#                 word.append(word_vowels[-1])
-#                 word_vowels = word_vowels[:-1]
-#     else:
-#         for i in range(len(s)):
-#             if i % 2 == 0:
-#                 word.append(word_vowels[-1])
-#                 word_vowels = word_vowels[:-1]
-#             else:
-#                 word.append(word_conson[-1])
-#                 word_conson = word_conson[:-1]
-#
-#     print(s, '->', ''.join(word))
-# else:
-#     print(s, '->', 'Impossible')
-#
-#
+
+s = input()
+word_vowels = []
+word_conson = []
+vowels = ['a','e','i','o','u']
+
+for i in s:
+    if i in vowels:
+        word_vowels.append(i)
+    else:
+        word_conson.append(i)
+
+word = []
+if abs(len(word_vowels) - len(word_conson)) <= 1:
+    if len(word_conson) > len(word_vowels):
+        word_transfer1,word_transfer2 = word_conson.copy(),word_vowels.copy()
+    else:
+        word_transfer1,word_transfer2 = word_vowels.copy(),word_conson.copy()
+    for i in range(len(s)):
+        if i % 2 == 0:
+            word.append(word_transfer1.pop())
+        else:
+            word.append(word_transfer2.pop())
+    print(s, '->', ''.join(word))
+else:
+    print(s, '->', 'Impossible')
+
+
 
 
 
