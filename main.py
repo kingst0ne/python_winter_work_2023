@@ -141,7 +141,7 @@ import keyword
 #     #else:
 #     print(i)
 
-s = 'hello world!'
+#s = 'hello world!'
 # print(len(s))
 # print(s[::-3])
 # print(s[0])
@@ -527,38 +527,145 @@ s = 'hello world!'
 #     print('Vis')
 # else:
 #     print('not vis')
+#
+# s = input()
+# word_vowels = []
+# word_conson = []
+# vowels = ['a','e','i','o','u']
+#
+# #Создание массивов по глассным/согласным
+# for i in s:
+#     if i in vowels:
+#         word_vowels.append(i)
+#     else:
+#         word_conson.append(i)
+#
+# word = []
+# if abs(len(word_vowels) - len(word_conson)) <= 1: #Проверка на длину массивов,
+#     # можно ли поставить гласные между согласными?
+#     if len(word_conson) > len(word_vowels): #Проверка, какой из массивов больше - в зависимости от того,
+#         # какой больше, копируем в разные массивы для переноса
+#         word_transfer1,word_transfer2 = word_conson.copy(),word_vowels.copy()
+#     else:
+#         word_transfer1,word_transfer2 = word_vowels.copy(),word_conson.copy()
+#     for i in range(len(s)):
+#         if i % 2 == 0:
+#             word.append(word_transfer1.pop())
+#         else:
+#             word.append(word_transfer2.pop())
+#     print(s, '->', ''.join(word))
+# else:
+#     print(s, '->', 'Impossible')
+#
+# #Урок 6.
+# a = 256
+# b = 256
+# a1 = 257
+# b2 = 257
+#если в консоли написать а1 + 1 is b2 выдаст False
+#
+# tes = set([1,2,3,2.0])
+# #Множества не содержат копий
+#
+# tes = set([1,  (123,123),'abs'])
+# print(tes)
+#
+# lst = [1,2,2,3,3,3,4,4,4,4]
+# print(len(lst))
+# tes = set(lst)
+# print(len(tes))
 
-s = input()
-word_vowels = []
-word_conson = []
-vowels = ['a','e','i','o','u']
+# month = ['Jan','Feb','Mar','Apr','May','June', 'Jul', 'Aug', 'Sept', 'OCT','nov', 'dec']
+# tes = set(month)
+# print(tes)
+#
+# tes = set([1,2,3,4,5,6,7,8,9,10])
+# sred = sum(tes)/len(tes)
+# print(sred)
+#
+# month = ['Jan','Mar','Apr','May','June', 'Jul', 'Aug', 'Sept', 'OCT','nov', 'dec']
+# tes = set(month)
+# tes.add('Feb')
+# tes.discard('May')
+# print(tes)
 
-#Создание массивов по глассным/согласным
-for i in s:
-    if i in vowels:
-        word_vowels.append(i)
-    else:
-        word_conson.append(i)
+#
+# month1 = ['Jan','Mar','Apr','May','June',]
+# month2 = [ 'Jan','Jul', 'Aug', 'Sept', 'OCT','nov', 'dec']
+# tes1 = set(month1)
+# tes2 = set(month2)
+# tes = tes1.union(tes2)
+# print(tes)
+#
+# s = input()
+# alph = 'abcdefghijklmnopqrstuvwxyz'
+# if set(s) == set(alph):
+#     print('Панграммная строка')
+# else:
+#     print('Не панграмная')
+#
+# x = set([1,2,3])
+# y = set([1,2,3,4,5,6])
+#
+# print(x | y) #Тоже самое что union
+# print(x - y)
+# print(x ^ y)
+#
+# print(x.issubset(y))
+# print(y.issubset(x))
+#
+# s = input()
+# tes = set()
+# for i in s.split():
+#     tes = (tes | set(i))
+# print(len(tes))
+#Неизменные множнства - frozenset
+# fro = frozenset((1,2,3))
+# print(fro)
+#
+# def convert_to_celsius(temp):
+#     return 5/9* (temp-32)
+#
+# print(convert_to_celsius(100))
+#
+# def convert_to_farh(temp):
+#     return (temp*9/5)+32
+#
+# print(convert_to_farh(37.7777776))
+#
+# def nalog (dohod):
+#     return dohod*0.13
+#
+# s = 0
+# summa = 1
+# while summa!= 0:
+#     summa = int(input())
+#     s+= summa
+#     print(nalog(s))
 
-word = []
-if abs(len(word_vowels) - len(word_conson)) <= 1: #Проверка на длину массивов,
-    # можно ли поставить гласные между согласными?
-    if len(word_conson) > len(word_vowels): #Проверка, какой из массивов больше - в зависимости от того,
-        # какой больше, копируем в разные массивы для переноса
-        word_transfer1,word_transfer2 = word_conson.copy(),word_vowels.copy()
-    else:
-        word_transfer1,word_transfer2 = word_vowels.copy(),word_conson.copy()
-    for i in range(len(s)):
-        if i % 2 == 0:
-            word.append(word_transfer1.pop())
-        else:
-            word.append(word_transfer2.pop())
-    print(s, '->', ''.join(word))
-else:
-    print(s, '->', 'Impossible')
+# def pprriinntt(var1, *args, **kwargs):
+#     print(var1)
+#     print(*args)
+#     print(**kwargs)
+#
+# a = pprriinntt(11, [11,2323,345,'ammsd'], [0.0,0.2], '00oo12')
+#
+# def nalog (dohod, stavka=0.13):
+#     return dohod*stavka
+#
+# s = 0
+# while True:
+#     summa = int(input())
+#     if summa == 0:
+#         break
+#     s+= summa
+#     print(nalog(s))
 
+def uni_let(lst):
+    tes = set()
+    for i in lst:
+        tes = (tes | set(i.lower()))
+    s = ''.join(sorted(tes))
+    return s,len(s)
 
-
-
-
-
+print(uni_let(['ABcd','uerKHGuhf','eirvfPIOONeoinv____12']))

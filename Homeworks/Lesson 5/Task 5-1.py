@@ -22,5 +22,11 @@ for i in range(1, n+1):
         else:
             dct[i].append(dct[i-1][j-2] + dct[i-1][j-1])
 
+
+max_len = len(' '.join(str(j) for j in dct[n]))
 for i in range(1,n+1):
-    print(' '.join(str(j) for j in dct[i]))
+    if max_len//2 == 0:
+        max_len += 1
+    line_len = len(' '.join(str(j) for j in dct[i]))
+    print(' '*int((max_len-line_len)*0.5) + ' '.join(str(j) for j in dct[i]))
+
