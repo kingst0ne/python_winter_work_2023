@@ -660,12 +660,106 @@ import keyword
 #         break
 #     s+= summa
 #     print(nalog(s))
+#
+# def uni_let(lst):
+#     tes = set()
+#     for i in lst:
+#         tes = (tes | set(i.lower()))
+#     s = ''.join(sorted(tes))
+#     return s,len(s)
+#
+# print(uni_let(['ABcd','uerKHGuhf','eirvfPIOONeoinv____12']))
+#
+# def check2(n):
+#     def chet(n):
+#         print (f'{n} - четное')
+#     def nechet(n):
+#         print(f'{n} - нечетное')
+#     if n%2:
+#         nechet(n)
+#     else:
+#         chet(n)
+#
+# for i in range(10):
+#     check2(i)
+#
+# def fizzbuzz(n):
+#     def fb3():
+#         print('fizz')
+#     def fb5():
+#         print('buzz')
+#     def fb15():
+#         print('fizzbuzz')
+#     def fb_none(n):
+#         print(f'{n}')
+#     if n%15 == 0:
+#         fb15()
+#     elif n%5 == 0:
+#         fb5()
+#     elif n%3 == 0:
+#         fb3()
+#     else: fb_none(n)
+#
+#
+# for i in range(20):
+#     fizzbuzz(i)
+#
+# print(list(zip((1,2,3,4),[4,5],{7:8,9:10,11:12})))
+#
+# for x in reversed([1,2,3,4,5]):
+#     print(x)
+#
+# def chet(n):
+#     if n%2==0: return True
+#     return False
+#
+#
+# print(list(filter(chet, [0,1,2,3,4,5,6,7])))
 
-def uni_let(lst):
-    tes = set()
-    for i in lst:
-        tes = (tes | set(i.lower()))
-    s = ''.join(sorted(tes))
-    return s,len(s)
+#print(all([[[]]]))
+#
+# print(sum(map(int, list(str(123)))))
+#
+# def tros(x):
+#     return -abs(x)
+#
+# print(sorted([1,-2,5,-3,6], key=tros))
+# print(max([1,-2,5,-3,6], key=tros))
+#
+# def kvad(lst, x):
+#     rez = []
+#     for i in lst:
+#         if i**2 > x:
+#             rez.append(i)
+#     return rez
+#
+# print(kvad([1,2,3,4,5,6,7,8,-9], 20))
+#
+# def kvad2(n,x=20):
+#     if n**2 > x:
+#         return True
+#
+# print(list(filter(kvad2,[1,2,3,4,5,6,7,8,-9])))
 
-print(uni_let(['ABcd','uerKHGuhf','eirvfPIOONeoinv____12']))
+import math
+#
+# print(math.gcd(12,24))
+#
+#
+# def nok(int1, int2):
+#     return int1 * int2 / math.gcd(int1,int2)
+#
+#
+# print(nok(12,4567))
+#
+# def krug_area (r):
+#     return (math.pi*r**2)
+
+
+#
+# lst = [41,26,3,4,55,7,4,65,15, 6784, 3984]
+# def last_cifra(lst):
+#     return (-lst%10, -lst)
+#
+#
+# print(sorted(lst, key=last_cifra))
