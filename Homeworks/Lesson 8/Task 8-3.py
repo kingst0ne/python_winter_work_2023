@@ -4,6 +4,6 @@
 
 '''
 
-lst = ['ababa', 'xx', 'asdnsad','aaaaa','Aoioianiuina', 'xyy', 'abb','aab']
+lst = ['ababa', 'xx', 'asdnsadrr','aaaaar','Aoioianiuina', 'xyy', 'abb','aab']
 
 print(sorted(lst, key=lambda x: (-len(set(x.lower())), x.lower())))

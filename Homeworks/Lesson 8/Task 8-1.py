@@ -25,7 +25,7 @@ def A_and_G_transform(s):
             s = s.partition('А')[2]
     return s_to_return + s
 
-s = 'ГААТЦТЦТЦТЦАГТААГАГАААА'
+s = 'ГААТЦТЦТЦТЦАГТААГАГАААААА'
 
 s = A_and_G_transform(s)
 s = CT_and_AG_transform(s)
