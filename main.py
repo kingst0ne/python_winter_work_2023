@@ -763,3 +763,60 @@ import math
 #
 #
 # print(sorted(lst, key=last_cifra))
+
+# #Lesson8
+# print('-'.join('abc-bcd-cde'.split('-')))
+# print('abc-bcd-cde'.partition('abc'))
+#
+#
+# s = 'AGAACCCCGGTATGTCGATGTTAGGCAACT'
+# n = 2
+# #print(s.partition('A'*n).count('A'*n))
+# dct = {}
+# for i in range(len(s) - n +1):
+#     dct[s[i:i + n]] = dct.get(s[i:i + n],0) +1
+#
+# print(dct.items())
+#
+# for i in dct:
+#     if dct[i]==max(dct.values()):
+#         print(i)
+#
+# def fun1(x): return x%10
+# def fun2(x): return x%10,x
+#
+# spi = [222,21,1,11,12,322]
+# print(sorted(spi, key=fun1))
+# print(sorted(spi, key=lambda x:x%10))
+# print(sorted(spi, key=fun2))
+# print(sorted(spi, key=lambda x:(x%10,x)))
+# for i in range(1,10):
+#     print((lambda x:x**x)(i))
+#
+# aa = (lambda x:x**x)
+# print(aa(8))
+#
+# st = (lambda s: ''.join(list(reversed(s.lower()))))
+# sts = (lambda s: s.lower()[::-1])
+#
+# #s[-i].lower for i in range(len(s)
+#
+# print(st('UNojsdhweYYU'))
+# print(sts('UNojsdhweYYU'))
+# lst = [2,3,4,5,6,7,8,2,1]
+#
+# print(sorted(lst, key=lambda x:(x%2!=0,x))) #Сортирует сначала там, где в кортеже первое - 0
+#
+# lst = ['b', 'A', 'Z', 'x']
+# print(sorted(lst, key=lambda x: x.lower()))
+# lst = [1,10,21,30]
+# print(min(lst, key= lambda x: abs(16-x)))
+#
+#
+# lst = [123,234,345]
+# print(list(map(lambda x:sum(map(int,(str(x)))),lst))) #2 map чтобы сделать жестко сумму цифр числа, уф
+
+#
+# lst = [('Иванов',100),('Петров',200),('Сидоров',200),('Лунин',200), ('Воробьев',100)]
+# print(sorted(lst, key=lambda x:(-x[1], x[0])))
+# print(sorted(lst, key=lambda x:(x[1], -ord(x[0][0].upper()))))
