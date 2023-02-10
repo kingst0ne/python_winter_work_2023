@@ -812,7 +812,7 @@ import math
 # lst = [1,10,21,30]
 # print(min(lst, key= lambda x: abs(16-x)))
 #
-#
+# #
 # lst = [123,234,345]
 # print(list(map(lambda x:sum(map(int,(str(x)))),lst))) #2 map чтобы сделать жестко сумму цифр числа, уф
 
@@ -820,3 +820,55 @@ import math
 # lst = [('Иванов',100),('Петров',200),('Сидоров',200),('Лунин',200), ('Воробьев',100)]
 # print(sorted(lst, key=lambda x:(-x[1], x[0])))
 # print(sorted(lst, key=lambda x:(x[1], -ord(x[0][0].upper()))))
+
+#print(sorted([1, -5, 2, -4, 3, float('inf')], key= lambda x:abs(x)))
+#print(sorted([1, 2,3,111,222,333], key= lambda x:str(x)))
+#print(sorted([1, 0, [],[0],(),(0,), (0)], key= lambda x:bool(x)))
+#print(sorted(['Hello', 'This', 'Crazy', 'World'], key= lambda x:x[::-1]))
+#
+# spi = [222,21,1,111,12,322]
+#
+# print(sorted(spi, key=lambda x: x%10))
+# print(sorted(spi, key=lambda x: (x%10, x)))
+# print(sorted(spi, key=lambda x: (x%10, (x//10)%10)))
+#
+# from functools import reduce
+# print(reduce(lambda x,y:x+y, [1,2,3,4,5]))
+# print(reduce(lambda x,y:x+y, [1,2,3,4,5], 100))
+
+
+#
+# import collections
+#
+# a = collections.Counter('aaaaaaaaabbbbbbbbccccccddddeeedffffffabcdef')
+# print(a)
+# b = dict(a)
+# print(b)
+# print(a.keys())
+
+#
+# f = open("test.txt","r")
+# print(f.read(5))
+# print(f.read(4))
+# print(f.read(5))
+# print(f.read())
+#
+# f.close()
+#
+# f = open("test.txt", "rt")
+# print(f.readlines())
+# f.close()
+#
+# f = open("test.txt", "rt")
+# print(f.readline())
+# print(f.readline())
+#
+# f.close()
+#
+# f = open('test.txt','r')
+#
+# f.seek(3)
+# print(f.read())
+# f.close()
+
+pass
