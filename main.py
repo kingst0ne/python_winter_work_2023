@@ -870,5 +870,116 @@ import math
 # f.seek(3)
 # print(f.read())
 # f.close()
+#
+# import openpyxl
+# #
+# # wb = openpyxl.load_workbook('test1.xlsx')
+# #
+# # for listname in wb.sheetnames:
+# #     ws = wb[listname]
+# #     print('\n',ws.title,'-----------------------')
+# #     for i in range(ws.max_row):
+# #         for j in range(ws.max_column):
+# #             print(i+1,j+1, ws.cell(i+1,j+1).value, end=' ')
+#
+# wb = openpyxl.load_workbook('test1.xlsx')
+#
+# ws = wb['Лист1']
+#
+# lst = [1,2,3,4,5,6]
+#
+# ws.append(lst)
+# ws.append({'A':'tyui',2:'ioiuyyw'})
+#
+# wb.save('test1.xlsx')
+
+import math
+import time
+#
+# t0 = time.time()
+# tes = set()
+# for i in range(10000000):
+#     tes.add(i**0.5)
+# t1 = time.time()
+# print(t1 - t0,t0,t1)
+
+#
+# t0 = time.time()
+# print(time.ctime())
+# print(time.ctime(t0))
+# time.sleep(5)
+# t1 = time.time()
+# print(time.ctime(t1))
+# print(t1-t0)
+#
+# def two_sec():
+#     t0 = time.time()
+#     time.sleep(2)
+#     t1 = time.time()
+#     return t1-t0
+#
+#
+# def three_sec():
+#     t0 = time.time()
+#     time.sleep(3)
+#     t1 = time.time()
+#     return t1-t0
+#
+# total_time_2 = 0
+# total_time_3 = 0
+# for i in range(11):
+#     if i%2:
+#         total_time_3 += three_sec()
+#     else:
+#         total_time_2 += two_sec()
+#
+# print(total_time_2,total_time_3)
+#
+# import datetime
+# b= datetime.datetime.today()
+# c = datetime.datetime.now()
+# print(b.year)
+# print(b.month)
+# print(b.time())
+# print(b.second)
+# print(b,c)
+#
+# d1 = datetime.datetime.strptime('22 04 2022 19:33','%d %m %Y %H:%M')
+# # d2 = datetime.datetime.strptime('22 04 2022 20:33','%d %m %Y %H:%M')
+# import datetime
+# import locale
+# print(locale.getlocale())
+# locale.setlocale(locale.LC_ALL,'ru')
+# print(locale.getlocale())
+# # d = datetime.date(2023, 2, 23)
+# # print(d.strftime('%a %d, %b %Y'))
+# # print(d)
+#
+# birthday = datetime.date(1994, 6, 18)
+# print(birthday.strftime('%B'))
+# print(birthday.strftime('%D'))
+# print(birthday.strftime('%m'))
+# print(birthday.strftime('%d'))
+
+import calendar
+#
+# print(calendar.isleap(1900))
+
+def day_count(n):
+    dct = {}
+    for month in range(1,13):
+        for day in range(1, calendar.monthrange(2023,month)[1] +1):
+            day_num = calendar.weekday(n,month,day)
+            # if day_num in dct.keys():
+            #     dct[day_num] += 1
+            # else: dct[day_num] = 1
+            dct[day_num] = dct.get(day_num, 0) + 1
+    print(dct)
+
+day_count(2004)
+
+
+
+
 
 pass
