@@ -960,26 +960,36 @@ import time
 # print(birthday.strftime('%D'))
 # print(birthday.strftime('%m'))
 # print(birthday.strftime('%d'))
-
-import calendar
 #
-# print(calendar.isleap(1900))
+# import calendar
+# #
+# # print(calendar.isleap(1900))
+#
+# def day_count(n):
+#     dct = {}
+#     for month in range(1,13):
+#         for day in range(1, calendar.monthrange(2023,month)[1] +1):
+#             day_num = calendar.weekday(n,month,day)
+#             # if day_num in dct.keys():
+#             #     dct[day_num] += 1
+#             # else: dct[day_num] = 1
+#             dct[day_num] = dct.get(day_num, 0) + 1
+#     print(dct)
+#
+# day_count(2004)
+#
+# lst = [x for x in range(1, 10) if x%3==0]
+# print(lst)
+#
+# orig = [1.25, -9.25, 10.22, 3.78, -5.2, 1.3]
+# prices = [i if i > 0 else 0 for i in orig]
+# print(prices)
 
-def day_count(n):
-    dct = {}
-    for month in range(1,13):
-        for day in range(1, calendar.monthrange(2023,month)[1] +1):
-            day_num = calendar.weekday(n,month,day)
-            # if day_num in dct.keys():
-            #     dct[day_num] += 1
-            # else: dct[day_num] = 1
-            dct[day_num] = dct.get(day_num, 0) + 1
-    print(dct)
+from string import ascii_letters
+letters = 'njnlшгиывжщср;sdbc;jb'
 
-day_count(2004)
-
-
-
+lst = [x+'- YES' if x in ascii_letters else x+'- NO' for x in letters]
+print(lst)
 
 
 pass

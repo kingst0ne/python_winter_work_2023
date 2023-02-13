@@ -26,9 +26,15 @@ lst_sorted = sorted(lst, key= lambda x: (x[3],x[1],x[2]))
 wb = openpyxl.Workbook()
 wb.save('salary.xlsx')
 ws = wb.active
+summa = 0
 for i in range(1, len(lst_sorted)+1):
-    for j in range(1, len(lst_sorted[0])):
+    for j in range(1, len(lst_sorted[0])+1):
         ws.cell(row=i, column=j).value = lst_sorted[i-1][j-1]
+        if j == 5:
+            summa += int(ws.cell(row=i, column=5).value)
+
+ws.cell(row=i+1, column=1).value = 'ИТОГО'
+ws.cell(row=i+1, column=5).value = summa
 
 wb.save('salary.xlsx')
 
