@@ -14,10 +14,16 @@ import openpyxl
 
 
 lst = []
-with open('data.csv', newline='', encoding='utf-8') as file:
+with open('data2.csv', newline='', encoding='utf-8') as file:
     rows = csv.reader(file)
     for i, row in enumerate (rows):
-        lst.append(tuple(row[0].split(';')))
+        if i == 0 and row[0].isalpha() or i == 0 and row[0].split(';')[0].isalpha():
+            continue
+        if len(row) > 1:
+            lst.append(tuple(row))
+        else:
+            lst.append(tuple(row[0].split(';')))
+
 
 lst_sorted = sorted(lst, key= lambda x: (x[3],x[1],x[2]))
 
