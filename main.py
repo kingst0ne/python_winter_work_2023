@@ -986,10 +986,83 @@ import time
 # print(prices)
 
 from string import ascii_letters
-letters = 'njnlшгиывжщср;sdbc;jb'
+# ru_letters = 'аеиуюяэыaieyu'
+# letters = 'njnlшгиывжщср;sdbc;jb'
+#
+# lst = [x+'- YES' if x in ru_letters else x+'- NO' for x in letters]
+# # print(lst)
+# orig = [1.25, -9.25, 10.22, 3.78, -5.2, 1.3]
+#
+# def get_price(price):
+#     return price if price>0 else 0
+# prices = [get_price(i) for i in orig ]
+# print(prices)
+#
+# prices = [(lambda x:x if x>0 else 0)(i) for i in orig ]
+# print(prices)
+# prices = (list(map(get_price, orig)))
+# print(prices)
+#
+# def fizz_buzz(num):
+#     return 'FizzBuzz' if num%15==0 else 'Fizz' if num%3==0 else 'Buzz' if num%5==0 else num
+#
+# lst = [fizz_buzz(i) for i in range(1,20)]
+# print(lst)
+#
+# words = ['я', 'изучаю', 'Питон']
+#
+# res = [letter for word in words for letter in word]
+# print(res)
+#
+# key = ['name', 'age', 'weight']
+# value = ['lilu', 25, 100]
+#
+# for
+#
+# lst = [[i*j for i in range(1,10)] for j in range(1,10)]
+# print(lst)
+#
+# flat = [num for row in lst for num in row]
+# print(flat)
+#
+# dct ={}
+# for num in range(1,10):
+#     dct[num] = num**2
+#
+# print(dct)
+#
+# dct2 = {num:num**2 for num in range(1,10)}
+# print(dct2)
+#
+# rus_let = 'фдылижщфёшврlkabs;kabs'
+# dct = {i: ord(i)           for i in rus_let}
+# print(dct)
+#
+# items = [(1,2),(3,4),(5,6),(7,8)]
+# dct = {key:value for (key,value) in items}
+# print(dct)
+#
+# def fizz_buzz(num):
+#     return 'FizzBuzz' if num%15==0 else 'Fizz' if num%3==0 else 'Buzz' if num%5==0 else num
+#
+# fizzbuzz = {i:fizz_buzz(i) for i in range(1,20)}
+# print(fizzbuzz)
+#
+# from calendar import monthrange as mr
+#
+# def month_dates(month, year):
+#     return [(x,month,year) for x in range(1,mr(year,month)[1]+1)]
+#
+# def year_dates(year):
+#     return [[(x,month,year) for x in range(1,mr(year,month)[1]+1)] for month in range(1,13)]
+#
+#
+# print(month_dates(2,2023))
+# print(month_dates(2,2024))
+# print(year_dates(2024))
 
-lst = [x+'- YES' if x in ascii_letters else x+'- NO' for x in letters]
-print(lst)
+
+
 
 
 pass
