@@ -1060,6 +1060,141 @@ from string import ascii_letters
 # print(month_dates(2,2023))
 # print(month_dates(2,2024))
 # print(year_dates(2024))
+# #
+# print([x**2 if x%2==0 else x**3 for x in range (1,11)])
+
+import math
+#
+# math.sqrt(1)
+# s = (-1)**0.5
+# s = complex(2,4)
+# s = complex(input())
+# print(s)
+#
+# try:
+#     s = int(input())
+# except Exception:
+#     print('Ошибка Exception')
+# except ValueError:
+#     print('val_err')
+# else:
+#     print('нет ошибки')
+# finally:
+#     print('finally')
+#
+# try:
+#     a = 1/0
+# except ZeroDivisionError:
+#     print('Деление на 0')
+#     a = 0
+# except ValueError:
+#     print('val_err')
+# else:
+#     print('нет ошибки')
+# finally:
+#     print('finally')
+#
+#
+# while True:
+#     val = (input('число'))
+#     try:
+#         val = int(val)
+#     except ValueError:
+#         val = float(val)
+#     else:
+#         print(val)
+#         break
+#
+# def fun(n):
+#     for x in range (n):
+#         return x*x
+#
+# g = fun(3)
+# print(g)
+#
+# def fun(n):
+#     for x in range (n):
+#         print('До yield',x)
+#         yield x*x
+#         print('После yield',x)
+#
+# g = fun(3)
+# for k in g:
+#     print('До печати', k)
+#     print(k)
+#     print('После печати', k)
+#
+# print(g)
+#
+# def fun(n):
+#     for x in range(n):
+#         yield x*x if x%2==0 else x**3
+#
+#
+# g = fun(10)
+# for k in g:
+#     print(k, end=' ')
+# for k in g:
+#     print(k, end=' ')
+#
+# def fun(n):
+#     for x in range(n):
+#         yield x*x if x%2==0 else x**3
+# g = fun(3)
+# #
+# # print(next(g))
+# # print(next(g))
+# # print(next(g))
+# # print(next(g))
+#
+# for k in range(10):
+#     try:
+#         print(next(g))
+#     except StopIteration:
+#         print('Stop')
+#         break
+
+
+#
+# def factorial():
+#     f,k = 1,1
+#     while True:
+#         yield f
+#         k +=1
+#         f*=k
+#
+# gf = factorial()
+#
+# for m in gf:
+#     print(m)
+#     input()
+#
+# def factorial():
+#     f,k = 1,1
+#     while True:
+#         yield f
+#         k +=1
+#         f+=k
+#
+# n = int(input())
+# gf = factorial()
+#
+# for m in range(n):
+#     print(next(gf))
+
+lst = [1,10,100,2,20,200]
+
+def summa_lst():
+    summa = 0
+    for i in lst:
+        summa+=i
+        yield summa
+
+
+
+summa = summa_lst()
+for i in range(len(lst)):
+    print(next(summa))
 
 
 
