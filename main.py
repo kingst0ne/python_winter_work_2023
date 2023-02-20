@@ -1181,23 +1181,239 @@ import math
 #
 # for m in range(n):
 #     print(next(gf))
+#
+# lst = [1,10,100,2,20,200]
+#
+# def summa_lst():
+#     summa = 0
+#     for i in lst:
+#         summa+=i
+#         yield summa
+#
+#
+#
+# summa = summa_lst()
+# for i in range(len(lst)):
+#     print(next(summa))
+#
+# try:
+#     file = open('tester.txt', 'r')
+# except Exception as err:
+#     print(Exception, err)
+# except FileNotFoundError as err:
+#     print(FileNotFoundError, err)
 
-lst = [1,10,100,2,20,200]
+#
+# try:
+#     file = open('tester.txt', 'r')
+# except FileNotFoundError as err:
+#     print(FileNotFoundError, err)
+# except Exception as err:
+#     print(Exception, err)
+#
+# def devide(x,y):
+#     try:
+#         out = x/y
+#     except:
+#         try:
+#             import math
+#             out = math.inf*x/abs(x)
+#         except:
+#             out = None
+#     finally:
+#         return out
+#
+# print(devide(15,0))
+# print(devide(0,0))
 
-def summa_lst():
-    summa = 0
-    for i in lst:
-        summa+=i
-        yield summa
+#
+# try:
+#     raise Exception('Что-то не так')
+# except Exception as err:
+#     print("messege: "+ str(err))
+#
+# def validate(name):
+#     if len(name)<10:
+#         raise ValueError
+#
+# try:
+#     name = 'nnnono'
+#     validate(name)
+# except ValueError:
+#     print('ohohoh')
+#
+# class NameShortError(ValueError):
+#     pass
+#
+# def validate(name):
+#     if len(name)<10:
+#         raise NameShortError
+#
+# validate('name')
+#
+# class Positive(ValueError):
+#     pass
+#
+# class Negative(ValueError):
+#     pass
+#
+# def pos_neg(lst):
+#     for num in lst:
+#         try:
+#             if num<0:
+#                 raise Negative
+#             elif num:
+#                 raise Positive
+#             else:
+#                 print(num)
+#         except Positive: (print('+'))
+#         except Negative: (print('-'))
+#
+# pos_neg([1,0,-7,8,0])
+#
+#
+# def gen(n):
+#     for x in range(n):
+#         yield x
+# g = gen(3)
+# print(*g)
+#
+# #
+# def gen2():
+#     # yield from 'abcdef'
+#     # yield from [3, 4, 5, 6, 7, 8]
+#     yield from (67896789, 9,1, 4,0, 5, 6, 7,8, 444,444444)
+# g = gen2()
+# print(*g)
+#
+# def fun_gen1():
+#     yield from 'red'
+#     yield from 'green'
+#     yield from 'blue'
+#
+# def fun_gen2():
+#     yield from 'round'
+#     yield from fun_gen1()
+#     yield from 'square'
+#
+# print(*fun_gen2())
+#
+# list_comp = [x for x in range(10)]
+# gen_comp = (x for x in range(10))
+#
+# print(list_comp)
+# print(gen_comp)
+
+#
+# def integ(n):
+#     for i in range(1, n+1):
+#         yield i
+#
+# def evens(iterable):
+#     for i in iterable:
+#         if not i%2:
+#             yield i
+#
+# def squared(iterable):
+#     for i in iterable:
+#         yield i*i
+#
+# chain = squared(evens(integ(10)))
+# chain_lst = [x for x in squared(evens(integ(10)))]
+# print(*chain)
+# print(chain_lst)
+
+#
+# def num_from_65():
+#     for i in range(ord('а'),ord('а')+32):
+#         yield i
+#
+# def chr_num(iter):
+#     for i in iter:
+#         yield chr(i).lower()
+#
+# chain = chr_num(num_from_65())
+# print(*chain)
+# pass
+#
+# def fun(n):
+#     print('fun', n)
+#     input()
+#     n -= 1
+#     if n > 0:
+#         fun(n)
+#
+# fun(6)
+
+#
+# def fun(n):
+#     print('fun', n)
+#     n -= 1
+#     if n > 0:
+#         fun(n)
+#     print('fun2',n)
+#     return
+#
+# fun(6)
+#
+# def fact(n):
+#     return n*fact(n-1) if n-1 else 1
+
+
+#
+# def triangle(n):
+#     print(n * '*')
+#     if n==1:
+#         pass
+#     else:
+#         n-=1
+#         triangle(n)
+#
+#         # print(n*'*')
+#         # n -=1
+#         # triangle(n)
+#
+#
+# triangle(5)
+#
+#
+# def triangle(n):
+#
+#     if n>0:
+#         triangle(n-1)
+#     print(n * '*')
+#     return
+#
+#
+# triangle(5)
+#
+#
+# def triangle(n):
+#     lentot = n
+#     if n>0:
+#         triangle(n-2)
+#     print(f'{(2*lentot-n)*" "}{n * "*"}{(2*lentot-n)*" "}')
+#     return
+#
+#
+# triangle(5)
+#
+#
+# def summa(n):
+#
+#     return n+summa(n-1) if n-1 else 1
+# print(summa(3))
+
+def fiba(n):
+
+    #Базовый случай
+    if n == 1 or n == 2:
+        return 1
+    #Рексурсивный случай
+    else:
+        return fiba(n-2)+fiba(n-1)
+
+print(fiba(5))
 
 
 
-summa = summa_lst()
-for i in range(len(lst)):
-    print(next(summa))
-
-
-
-
-
-pass
