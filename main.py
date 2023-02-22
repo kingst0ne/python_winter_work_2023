@@ -1489,26 +1489,130 @@ import re
 # print(re.findall(r"\b[A-Z]\d{3}[A-Z]{2}\d{2,3}\b", str)) #автономер
 # print(re.findall(r"\b[A-Z]\d{3}[A-Z]{2}1?[7,9]8\b", str)) #автономер СПБ
 import math
-str = 'cat cet cit c00t cut coot c)t 8888 888 c_t c.t nkn.dfv 8-933-654789 nkn.dfv F123BC78 F123BC788  F123BC178 123.456 d .ddd'
+# str = 'cat cet cit c00t cut coot c)t 8888 888 c_t c.t nkn.dfv 8-933-654789 nkn.dfv F123BC78 F123BC788  F123BC178 123.456 d .ddd'
+#
+# print(re.sub('cat','ass',str))
+# print(re.sub(r'\d{3}','***',str))
+# print(re.subn('cat','ass',str,3))
+# print(re.subn(r'\d{3}','***',str,3))
+# print(re.subn(r'\d','*',str, 10000))
+#
+# str = "https://www.python.ru/"
+#
+# print(re.sub(r'\.\w*\.','.rbc.',str))
+#
+#
+#
+# str = "(095)-8982-348 095-8923 0 (095)8873234"
+#
+#
+# print(re.sub(r'\(095\)','(812)',str))
 
-print(re.sub('cat','ass',str))
-print(re.sub(r'\d{3}','***',str))
-print(re.subn('cat','ass',str,3))
-print(re.subn(r'\d{3}','***',str,3))
-print(re.subn(r'\d','*',str, 10000))
 
-str = "https://www.python.ru/"
+import re
+#
+# text = 'fizzbuzz123.fizz_buzz6578'
+# res1 = re.sub(r"\d+",r"#",text)
+# print(res1)
+# res2 = re.sub(r"[a-z]+",r"(*)",text)
+# print(res2)
+#
+# def fullname(x):
+#     s = x.group()
+#     print(x.group(),x.start(),x.end())
+#
+#     match s:
+#         case "Коля": return "Николай"
+#         case "Миша": return "Михаил"
+#
+# text = 'Здравствуй Коля, привет Миша'
+# print(re.sub(r"\b\w{4}\b", fullname, text))
+#
+# def airport(x):
+#     s = x.group()
+#     match s:
+#         case "SVO": return "Sheremetevo"
+#         case "LED": return "Санкт-Петербург"
+#
+#
+# text2 = 'Самолет из LED прилетел в SVO'
+# print(re.sub(r"\b\w{3}\b", airport, text2))
+#
+# text = "first second"
+# print(re.sub(r"(first) (second)", r'\2 \1',text))
+#
+# text = "Орлов Игорьь Дмитриевич"
+# print(re.sub(r"(\w{5}) (\w{6}) (Дмитриевич)", r'\2 \3 \1',text))
+#
+# txt = '123 first 456 second'
+#
+# print(re.findall(r"(\d+) (\w+)",txt))
+#
+# txt2 = 'www.imto.ru 3 www.spbpu.ru 5 www.loh.de www.lohi.by'
+#
+# print(re.findall(r"www\.(\w+)\.[ru|by]",txt2))
+#
+# res = re.finditer(r"o",txt2)
+#
+# for i in res:
+#     print(i.group(), i.start(), i.end())
+# print(re.split(r"[^\d]",txt2))
+#
+# txt2 = 'www.imto.ru :3 www.spbpu.ru ;..5 www.loh.de www.l???ohi.by?'
+# print(re.split(r"[\.|\ |\:|\;|\?]+", txt2))
+#
+#
+# def squear(x):
+#     return str(int(x.group())**2)
+#
+# txt3 = ' 1 2 3 4 5 6 7 8 9 10 '
+# print(re.sub(r"\d+", squear, txt3))
+# print(re.sub(r"\d+", lambda x: str(int(x.group())**2), txt3))
+#
+# x = 5
+# print(re.findall(fr"{x}", '12345555666'))
+#
+# res = '|'.join(str(i) for i in range(x))
+# print(re.findall(fr"{res}", '012345555666'))
+#
+# def func(f):
+#     return f
+#
+# def hello():
+#     print('Hello')
+# #hello()
+# func(hello)()
+#
+# def speak(txt):
+#     def whisper(t):
+#         return t.lower()
+#     return whisper(txt)
+#
+# print(speak('HohohohHohoh PPPPPaa'))
 
-print(re.sub(r'\.\w*\.','.rbc.',str))
 
+#
+# def null_decorator(func):
+#     return func
+#
+# def hello():
+#     print('hello')
+#
+# hello = null_decorator(hello)
+# hello()
 
+def sample_decorator(func):
+    def wrapper():
+        print('start')
+        func()
+        print('end')
+    return wrapper
 
-str = "(095)-8982-348 095-8923 0 (095)8873234"
+def say():
+    print('Привет Мир')
 
-
-print(re.sub(r'\(095\)','(812)',str))
-
-
+say = sample_decorator(say)
+say()
 
 
 
