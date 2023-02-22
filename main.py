@@ -1403,17 +1403,135 @@ import math
 #
 #     return n+summa(n-1) if n-1 else 1
 # print(summa(3))
+#
+# def fiba(n):
+#
+#     #Базовый случай
+#     if n == 1 or n == 2:
+#         return 1
+#     #Рексурсивный случай
+#     else:
+#         return fiba(n-2)+fiba(n-1)
+#
+# print(fiba(5))
+#
+# lst = [1,2,[3,4,5,[6,7,8,9,[10,111]],234,[23,2]],0]
+#
+# res = []
+#
+# def lst_transform(lst):
+#     for a in lst:
+#         if type(a) == int:
+#             res.append(a)
+#         else:
+#             lst_transform(a)
+#     return res
+#
+# print(lst_transform(lst))
+#
+# import sys
+#
+# sys.getrecursionlimit()
 
-def fiba(n):
+import re
+#
+# str = 'Числа 99б 72б 81 и 999 делятся на 9'
+# print(re.findall(r"[8-9]",str))
+# print(re.findall(r"[6-9]",str))
+# print(re.findall(r"\d",str))
+# print(re.findall(r"\d\d",str))
+# print(re.findall(r"\d{1,3}",str))
+# print(re.findall(r"\d+",str))
+# print(re.findall(r"\d*",str))
+# print(re.findall(r"\dб",str))
+# print(set(re.findall(r"\w",str)))
+#
+# print("\\\"")
+# print(r"\\\"")
+# print(re.findall(r".",str))
+# print(re.findall(r"..",str))
+# print(re.findall(r"\b\w*и",str))
+'''
+\d - любая цифра
+\w - любая буква
+\b - начало или конеч слова
++ - 1 или больше
+* - 0 или больше
+? - 0 или 1
+'''
 
-    #Базовый случай
-    if n == 1 or n == 2:
-        return 1
-    #Рексурсивный случай
-    else:
-        return fiba(n-2)+fiba(n-1)
+# str = 'abracadabra112'
+# regex = r".a"
+# regex = r"\da\w"
+# regex = r"a\d"
+# regex = r".a?"
+#
+# str = 'Числа 99б 72б 81 и 999 100 200 199 1999 19a 1098 делятся на 1'
+# print(re.findall(r"\b1\d\d\b",str))
+#
+#
+# str = 'ПоКосой косой коса косить косилка 123'
+# print(re.findall(r"\b\w+\b",str))
+# print(re.findall(r"\b\w*[Кк]ос\w*\b",str)) #все кос-ы
+# print(re.findall(r"\b\w*кос\w*\b|\b\w*Кос\w*\b",str)) #все кос-ы
+#
+# str = 'cat cet cit c00t cut coot c)t c_t c.t nkn.dfv 8-933-654789 nkn.dfv F123BC78 F123BC788  F123BC178 123.456 d .ddd'
+#
+# print(re.findall(r"\bc.t\b",str))
+# print(re.findall(r"\bc..t\b",str))
+# print(re.findall(r"\bc[aui]t\b",str))
+# print(re.findall(r"\bc[^aui]t\b",str))
+# print(re.findall(r"\bc[^a-c]t\b",str))
+# print(re.findall(r"\w[a,5]",str))
+#
+# print(re.findall(r"\b\w{3}\.\w{3}\b", str)) #xxx.xxx - любой
+# print(re.findall(r"\b\d\-\d{3}\-\d{6}\b", str)) #телефон
+# print(re.findall(r"\b[A-Z]\d{3}[A-Z]{2}\d{2,3}\b", str)) #автономер
+# print(re.findall(r"\b[A-Z]\d{3}[A-Z]{2}1?[7,9]8\b", str)) #автономер СПБ
+import math
+str = 'cat cet cit c00t cut coot c)t 8888 888 c_t c.t nkn.dfv 8-933-654789 nkn.dfv F123BC78 F123BC788  F123BC178 123.456 d .ddd'
 
-print(fiba(5))
+print(re.sub('cat','ass',str))
+print(re.sub(r'\d{3}','***',str))
+print(re.subn('cat','ass',str,3))
+print(re.subn(r'\d{3}','***',str,3))
+print(re.subn(r'\d','*',str, 10000))
+
+str = "https://www.python.ru/"
+
+print(re.sub(r'\.\w*\.','.rbc.',str))
 
 
 
+str = "(095)-8982-348 095-8923 0 (095)8873234"
+
+
+print(re.sub(r'\(095\)','(812)',str))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pass
