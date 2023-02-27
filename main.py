@@ -1600,32 +1600,60 @@ import re
 #
 # hello = null_decorator(hello)
 # hello()
+#
+# def sample_decorator(func):
+#     def wrapper():
+#         print('start')
+#         func()
+#         print('end')
+#     return wrapper
+#
+# def say():
+#     print('Привет Мир')
+#
+# def prop():
+#     return 'loh'
+#
+# say = sample_decorator(say)
+# say()
+# prop = sample_decorator(prop)
+# print(prop())
+#
+#
+#
+# def upper_decorator(func):
+#     def wrapper():
+#         or_res = func()
+#         res2 = or_res.upper()
+#         return res2
+#     return wrapper
+#
+# @upper_decorator
+# def h():
+#     return 'Hello'
+#
+# print(h())
+#
 
-def sample_decorator(func):
+
+def lower_decorator(func):
     def wrapper():
-        print('start')
-        func()
-        print('end')
+        or_res = func()
+        res2 = or_res.lower()
+        return res2
     return wrapper
 
-def say():
-    print('Привет Мир')
+@lower_decorator
+def h():
+    return 'Hello'
 
-say = sample_decorator(say)
-say()
+print(h())
 
+@lower_decorator
+def l():
+    return 'LOH'
 
-
-
-
-
-
-
-
-
-
-
-
+print(l())
 
 
 
