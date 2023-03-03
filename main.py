@@ -1635,35 +1635,212 @@ import re
 # print(h())
 #
 
+#
+# def lower_decorator(func):
+#     def wrapper():
+#         or_res = func()
+#         res2 = or_res.lower()
+#         return res2
+#     return wrapper
+#
+# @lower_decorator
+# def h():
+#     return 'Hello'
+#
+# print(h())
+#
+# @lower_decorator
+# def l():
+#     return 'LOH'
+#
+# print(l())
+#
+# s = 'косой косил косой волос на волокосе'
+#
+# print(re.findall(r"\b\w+ос\w+\b", s))
+#
+# def fu(*args, **kwargs):
+#
+#     res = 0
+#     for i in args:
+#         if type(i) == int:
+#             res+=1
+#     for i in kwargs:
+#         if type(kwargs[i]) == int:
+#             res += 1
+#     return res
+#
+#
+# def fu2(*args, **kwargs):
+#
+#     res = ''
+#     for i in args:
+#         if type(i) == str:
+#             res+=i
+#     for i in kwargs:
+#         if type(kwargs[i]) == str:
+#             res += kwargs[i]
+#     return res
+#
+# print(fu2(1,2,'a', a=2, b=3, c='brac'))
 
-def lower_decorator(func):
-    def wrapper():
-        or_res = func()
-        res2 = or_res.lower()
-        return res2
-    return wrapper
+#
+# import time
+# def timer (func):
+#     def wrapper(*args, **kwargs):
+#         start = time.perf_counter()
+#         val = func(*args, **kwargs)
+#         end = time.perf_counter()
+#         work_time = end-start
+#         print(f'Время выполнения {func,__name__}: {work_time} сек')
+#         return val
+#     return wrapper
+#
+# @timer
+# def test(n):
+#     return sum(i/99**i for i in range(n))
+#
+# @timer
+# def sleep(n):
+#     time.sleep(n)
+#
+# res1 = test(10000)
+# res2 = sleep(5)
+#
+# print(res1)
+# print(f'Результат работы функции {res2}')
 
-@lower_decorator
-def h():
-    return 'Hello'
+#
+#
+# def summer (func):
+#     def wrapper(*args):
+#         val = func(*args)
+#         res = ''
+#         for i in val:
+#             if type(i) == str:
+#                 res+=i
+#         return res
+#     return wrapper
+#
+#
+# @summer
+#
+# def words():
+#     return ['xx','yy','zz']
+#
+#
+# print(words())
 
-print(h())
+#OOP
+#
+# class Person:
+#     def __init__(self, name, money):
+#         self.name = name
+#         self.money = money
+#         self.cur_money = self.money
+#
+#     def info(self):
+#         print(self.name, self.cur_money)
+#
+#     def set_money(self, x):
+#         self.cur_money = x
+#
+#     def give_money(self, x):
+#         self.cur_money += x
+#
+#     def get_money(self):
+#         return self.cur_money
+#
+#     def change_money(self, other, x):
+#         if self.cur_money - x <0:
+#             return print('Regected')
+#         else:
+#             other.cur_money += x
+#             self.cur_money -= x
+#
+#
+#
+#
+#
+# a = Person('Petr', 200)
+# b = Person('Ura',300)
+# a.info()
+# a.set_money(500)
+# a.info()
+# a.give_money(300)
+# a.info()
+# b.info()
+# a.change_money(b,1000)
+# a.info()
+# b.info()
+#import numpy as np
+#
+# class CrossSection:
+#     def __init__(self):
+#         #Добавляю параметры компрессора по ступени:
+#         #В этом участке данные по треугольникам скоростей
+#         #Окружная скорость на лопатке
+#         self.U = None
+#         #Переносная скорость
+#         self.W = None
+#         #Радиальная скорость
+#         self.C = None
+#         #Критическая скорость
+#         self.a_crit = None
+#
+#         #Данные по углам для треугольников скоростей
+#         self.alpha = None
+#         self.betta = None
+#
+#     def set(self, *args):
+#         for i in args:
+#             if i in self:
+#                 print('Found')
+#
+#
+#     def defineW(self):
+#         self.W = (self.U**2 + self.C**2)**0.5
 
-@lower_decorator
-def l():
-    return 'LOH'
-
-print(l())
 
 
+class Pet:
+    def __init__(self, name, weight, hunger_lvl):
+        self.name = name
+        self.weight = weight
+        self.hunger_lvl = hunger_lvl
 
 
+    def info(self):
+        print(self.name, self.weight, self.hunger_lvl)
+
+    def hungry(self):
+        print(self.hunger_lvl, 'Gol' if self.hunger_lvl<5 else 'Not Gol')
+
+    def feed(self, x):
+        self.hunger_lvl += x
+        return self.info()
 
 
+# dog = Pet('oof', 5, 4)
+# dog.info()
+# dog.hungry()
+# dog.feed(3)
+
+class Dog(Pet):
+    def voice(self):
+        print('oof')
+
+class Cat(Pet):
+    def voice(self):
+        print('meow')
+    def hungry(self):
+        print(self.hunger_lvl, 'Gol' if self.hunger_lvl<4 else 'Not Gol')
 
 
+d = Dog('nick',5,4)
+d.info()
 
-
-
+c = Cat('pussy', 4,4)
+c.hungry()
 
 pass
