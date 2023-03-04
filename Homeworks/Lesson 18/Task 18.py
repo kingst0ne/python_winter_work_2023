@@ -24,12 +24,12 @@ class Course:
         self.info = list(info)
 
 class Teacher:
-    def __init__(self):
-        self.work = 0
+    def __init__(self, name):
+        self.name = name
     def teach(self,info,*pupil):
         pass
     def check(self):
-        time.sleep(2)
+        time.sleep(1)
         if random.randint(0,1) == 1:
             return 'GOOD'
         else:
@@ -41,47 +41,49 @@ class Teacher:
         for i in pupil:
             if i.homework.check_status() == 'CHECKING':
                 if self.check() == 'GOOD':
-                    i.homework.upgrade_status()
-                else: i.homework.degrade_status()
+                    i.homework.status_done()
+                else: i.homework.status_incorrect()
             else:
-                return 'Homework not done'
+                print(f'Homework from {i} is not done!')
 
 
 
 class Pupil:
-    def __init__(self):
-        self.study_ = None
+    def __init__(self, name):
+        self.name = name
+    def __str__(self):
+        return f'{self.name}'
     def homework_to_do(self, task):
         self.homework = Homework(task)
-        self.homework.set_status(0)
+
+    def send_hw_to_check(self, teacher):
+        teacher.check_homework(self)
+
     def study(self):
-        self.homework.upgrade_status()
+        self.homework.status_checking()
 
 
 
 class Homework:
     def __init__(self, task):
         self.name = task
-        self.status = 0
-    def set_status(self, i):
-        self.status = i
-    def upgrade_status(self):
-        self.status += 1
-    def degrade_status(self):
-        self.status -= 1
+        self.status_list = ['TODO', 'CHECKING', 'INCORRECT', 'DONE']
+        self.status = self.status_list[0]
+    def status_new(self):
+        self.status = self.status_list[0]
+    def status_checking(self):
+        self.status = self.status_list[1]
+    def status_incorrect(self):
+        self.status = self.status_list[2]
+    def status_done(self):
+        self.status = self.status_list[3]
     def check_status(self):
-        if self.status == 0:
-            return 'TODO'
-        elif self.status == 1:
-            return 'CHECKING'
-        elif self.status ==2:
-            return 'DONE'
-        else: raise ValueError('Incorrect status!')
+        return self.status
 
 
-Nikolay = Teacher()
-Vasya = Pupil()
-Petya = Pupil()
+Nikolay = Teacher('Nikolay')
+Vasya = Pupil('Vasya')
+Petya = Pupil('Petya')
 
 
 
@@ -90,13 +92,15 @@ Nikolay.set_homework(Vasya, Petya, theme= 'OOP')
 print(Vasya.homework.check_status())
 print(Petya.homework.check_status())
 Vasya.study()
-Petya.study()
+print(Vasya.homework.check_status())
+Vasya.send_hw_to_check(Nikolay)
+# Petya.study()
 print(Vasya.homework.check_status())
 print(Petya.homework.check_status())
-
-Nikolay.check_homework(Vasya, Petya)
-print(Vasya.homework.check_status())
-print(Petya.homework.check_status())
+#
+# Nikolay.check_homework(Vasya, Petya)
+# print(Vasya.homework.check_status())
+# print(Petya.homework.check_status())
 
 
 pass
