@@ -1801,46 +1801,218 @@ import re
 #     def defineW(self):
 #         self.W = (self.U**2 + self.C**2)**0.5
 
+#
+#
+# class Pet:
+#     def __init__(self, name, weight, hunger_lvl):
+#         self.name = name
+#         self.weight = weight
+#         self.hunger_lvl = hunger_lvl
+#
+#
+#     def info(self):
+#         print(self.name, self.weight, self.hunger_lvl)
+#
+#     def hungry(self):
+#         print(self.hunger_lvl, 'Gol' if self.hunger_lvl<5 else 'Not Gol')
+#
+#     def feed(self, x):
+#         self.hunger_lvl += x
+#         return self.info()
+#
+#
+# # dog = Pet('oof', 5, 4)
+# # dog.info()
+# # dog.hungry()
+# # dog.feed(3)
+#
+# class Dog(Pet):
+#     def voice(self):
+#         print('oof')
+#
+# class Cat(Pet):
+#     def voice(self):
+#         print('meow')
+#     def hungry(self):
+#         print(self.hunger_lvl, 'Gol' if self.hunger_lvl<4 else 'Not Gol')
+#
+#
+# d = Dog('nick',5,4)
+# d.info()
+#
+# c = Cat('pussy', 4,4)
+# c.hungry()
+#
+# pass
+#
+# class A:
+#     def __init__(self):
+#         self.even = 0
+#         self.odd = 1
+#     def __call__(self):
+#         self.even += 2
+#         return self.even
+#     def __getitem__(self, item):
+#         self.odd += 2
+#         return  self.odd
+#
+#
+# a = A()
+#
+# print(a.even)
+# print(a.even)
+# print(a())
+# print(a())
+# print(a.even)
+# print(a[1])
+# print(a[2])
+# print(a[1])
+#
+
+#
+# class A:
+#     def __init__(self):
+#         self.even = 0
+#         self.odd = 1
+#     def __call__(self):
+#         self.even += 2
+#         return self.even
+#     def __getitem__(self, item):
+#         self.odd += 2
+#         return  self.odd
+#     def __repr__(self):
+#         return (' understand?')
+#
+# a = A()
+#
+# print(a)
+#
+# class Car:
+#     color = 'Red'
+#     def __init__(self, model, price):
+#         self.model = model
+#         self.price = price
+#
+#     def __str__(self):
+#         return f'Модель {self.model} цена{self.price}'
+# obj = Car('Lada',10000)
+#
+# print(obj.__dict__)
+#
+# class A:
+#     def __init__(self):
+#         self.x = 0
+#         self.y = 1
+#
+#     def __str__(self):
+#         res = []
+#         for i,j in self.__dict__.items():
+#             res.append(str(i)+':'+str(j))
+#         return ' '.join(res)
+#
+# print(A())
+#
+# #
+# class Chislo:
+#     def __init__(self, num):
+#         self.num = num
+#     def __eq__(self, other):
+#         if self.num %2 == 0 and other.num%2 == 0:
+#             return True
+#         else:
+#             return False
+#
+# class Chislo2(Chislo):
+#     def __init__(self, n, m):
+#         self.n = n
+#         self.m = m
+#
+#
+# a = Chislo(2)
+# b = Chislo(4)
+#
+#
+# print(a == b)
+# print(Chislo2(3,5))
+#
+#
+# class A:
+#     def __init__(self,s):
+#         self.s = s
+#     def __gt__(self, other):
+#         return len(self.s)>len(other.s)
+#
+#
+#
+# a = A('oooo')
+# b = A('OOOO')
+# print(min('oooo','OOOO'))
+#
+# print(a>b)
+# print(A.__name__)
+#
+# class A:
+#     def __init__(self):
+#         self.x = 1
+#     def __iter__(self):
+#         return self
+#     def __next__(self):
+#         self.x = 1 - self.x
+#         return self.x
+#
+# a = A()
+#
+# for i in range(5):
+#     print(next(a))
+
+#
+#
+# class A:
+#     def __init__(self,x):
+#         self.x = 0
+#         self.sum = 0
+#     def __iter__(self):
+#         return self
+#     def __next__(self):
+#         self.x +=1
+#         self.sum += self.x
+#         return self.sum
+#
+# a = A(15)
+#
+# for i in range(10):
+#     print(next(a))
+
+import itertools
+
+#
+#
+# for i in itertools.permutations([1,2,3,4]):
+#     print(i, end = ' ')
+#
+#
+# for i in itertools.combinations([1,2,3,4], 3):
+#     print(i, end = ' ')
+#
+# for i in itertools.combinations_with_replacement([1,2,3,4], 3):
+#     print(i, end = ' ')
+#
+# x = itertools.cycle([1,2,3,4])
+#
+# for i in range(20):
+#     print(next(x), end=' ')
 
 
-class Pet:
-    def __init__(self, name, weight, hunger_lvl):
-        self.name = name
-        self.weight = weight
-        self.hunger_lvl = hunger_lvl
+#
+# for i in itertools.chain([1, 2, 3, 4], 'abc', (3,2)):
+#     print(i, end=' ')
+lst = []
+for i in itertools.permutations(list('aabb')):
+    s = ''.join(i)
+    if s in lst:
+        continue
+    lst.append(s)
 
 
-    def info(self):
-        print(self.name, self.weight, self.hunger_lvl)
 
-    def hungry(self):
-        print(self.hunger_lvl, 'Gol' if self.hunger_lvl<5 else 'Not Gol')
-
-    def feed(self, x):
-        self.hunger_lvl += x
-        return self.info()
-
-
-# dog = Pet('oof', 5, 4)
-# dog.info()
-# dog.hungry()
-# dog.feed(3)
-
-class Dog(Pet):
-    def voice(self):
-        print('oof')
-
-class Cat(Pet):
-    def voice(self):
-        print('meow')
-    def hungry(self):
-        print(self.hunger_lvl, 'Gol' if self.hunger_lvl<4 else 'Not Gol')
-
-
-d = Dog('nick',5,4)
-d.info()
-
-c = Cat('pussy', 4,4)
-c.hungry()
-
-pass
+print(' '.join(lst), end = ' ')
