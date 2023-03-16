@@ -894,6 +894,7 @@ import math
 # wb.save('test1.xlsx')
 
 import math
+import random
 import time
 #
 # t0 = time.time()
@@ -2006,13 +2007,123 @@ import itertools
 #
 # for i in itertools.chain([1, 2, 3, 4], 'abc', (3,2)):
 #     print(i, end=' ')
-lst = []
-for i in itertools.permutations(list('aabb')):
-    s = ''.join(i)
-    if s in lst:
-        continue
-    lst.append(s)
+# lst = []
+# for i in itertools.permutations(list('aabb')):
+#     s = ''.join(i)
+#     if s in lst:
+#         continue
+#     lst.append(s)
+#
+#
+#
+# print(' '.join(lst), end = ' ')
+#
+# print(list(zip([1,2,3],[1,2,3,4])))
+#
+# print(list(itertools.zip_longest([1,2,3],[1,2,3,4],[1,2,3,4,5], fillvalue=None)))
+
+import numpy as np
+#
+# lst1 = [1,2,3]
+# lst2 = [4,5,6]
+# intt = np.array(lst1)
+# intt2 = np.array(lst2)
+# print(intt)
+# print(intt2)
+# print(lst1+lst2)
+# print(intt/intt2)
+# print(intt*3)
+#
+# zeros = np.zeros([2,3], dtype=int)
+# print(zeros)
+# ones = np.ones([2,3], dtype=int)
+# print(ones)
+#
+# print(zeros.reshape([3,2]))
+
+lst = np.array([[1,2,3],[4,5,6]])
+lst2 = np.array([[1,2,3],[np.nan,np.nan,np.nan]])
 
 
 
-print(' '.join(lst), end = ' ')
+#
+# print(lst.sum(axis=1))
+# print(np.cbrt(lst))
+#
+# print(np.gcd([6,24,36],[3,72,131]))
+#
+# print(np.lcm([6,24,36],[3,72,131]))
+#
+
+# print(np.mean(lst, axis=0))
+# print(np.nanmean(lst2, axis=1))
+#
+# print(np.amax(lst2, axis=0))
+# print(np.amin(lst))
+#
+# print(lst == lst2)
+# print(lst[lst <2])
+# #
+# cond = lst<np.percentile(lst,25)
+# # print(lst[cond])
+#
+# print(np.where(cond,lst,lst*100))
+#
+# print(lst.shape[0], lst.shape[1])
+#
+#
+# n= 3
+# lst = np.ones([n,n])
+#
+# for i in range(n):
+#     for j in range(n):
+#         lst[i][j] = (n*i)+(j+1)
+#
+# print(lst)
+# print(np.median(lst,axis=1))
+# print(np.median(lst,axis=0))
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+#
+# d1 = pd.DataFrame([[1,2,3],[4,5,6],[1,2,1]])
+# print(d1)
+#
+# df = pd.DataFrame({'Год':[2001,2002,2003], 'Sales':[30,40,50]})
+# # df['test'] = df['Год']*23.456+df['Sales']
+# # print(df)
+#
+# df2 = pd.DataFrame({'test': [1,2,3]})
+# df.plot.bar()
+#
+# plt.show()
+#
+
+#
+# x,y = [],[]
+#
+# for i in range(2000):
+#     x.append(random.random())
+#     y.append(random.random())
+#
+# df = pd.DataFrame({'x':x, 'y': y})
+#
+# df.plot('x','y', kind='scatter')
+#
+# plt.show()
+
+#
+# x,y = [],[]
+#
+# for i in range(100):
+#     x.append(i)
+#     y.append(i**2)
+#
+# df = pd.DataFrame({'x':x, 'y': y})
+#
+# df.plot('x','y', kind='scatter')
+#
+# plt.show()
+
+
