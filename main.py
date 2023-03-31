@@ -2125,5 +2125,612 @@ import matplotlib.pyplot as plt
 # df.plot('x','y', kind='scatter')
 #
 # plt.show()
+#
+#
+# import psycopg2
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# import matplotlib
+#
+#
+# con = psycopg2.connect(
+#     database="postgres",
+#     user="postgres",
+#     password = "1111",
+#     host="127.0.0.1",
+#     port="5432"
+# )
+# cur = con.cursor()
+# cur.execute("SELECT * from book2")
+#
+# df = pd.DataFrame(cur.fetchall(), columns=['book_id','book_name','author','price','amount'])
+#
+from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QMainWindow
+from PyQt6.QtCore import QSize, Qt
+
+import sys
+#
+# app = QApplication([])
+# window = QWidget()
+# window.show()
+# app.exec()
+
+# app = QApplication(sys.argv)
+# window = QPushButton('Push me!')
+# window.show()
+# app.exec()
+#
+# app = QApplication(sys.argv)
+# window = QMainWindow()
+# window.show()
+# app.exec()
+
+# class MainWindow(QMainWindow):
+#     def __init__(self):
+#         super(MainWindow, self).__init__()
+#         self.setWindowTitle('My App')
+#         self.resize(400,400)
+#         self.move(100,100)
+#         self.setWindowOpacity(0.9)
+#
+# app = QApplication(sys.argv)
+# window = MainWindow()
+# window.show()
+# app.exec()
+#
+# class MainWindow(QMainWindow):
+#     def __init__(self):
+#         super().__init__()
+#         self.setWindowTitle('My App')
+#         button = QPushButton('Press Me!')
+#         self.count = 0
+#         button.setCheckable(True)
+#         button.clicked.connect(self.button_clicked)
+#         button.clicked.connect(self.button_toggled)
+#
+#         self.setFixedSize(400,300)#QSize(400,300)
+#
+#         self.setCentralWidget(button)
+#
+#     def button_clicked(self):
+#         self.count += 1
+#         print('clicked', self.count)
+#         self.setWindowTitle(f'{self.count}')
+#
+#
+#     def button_toggled(self, checked):
+#         print('Toggled', checked)
+#
+#
+# app = QApplication(sys.argv)
+# window = MainWindow()
+# window.show()
+# app.exec()
+#
+# class MainWindow(QMainWindow):
+#     def __init__(self):
+#         super().__init__()
+#         self.setWindowTitle('My App')
+#         self.button1 = QPushButton('Press Me!')
+#         self.button1.clicked.connect(self.button_clicked)
+#         self.button2 = QPushButton('Press Me!2')
+#         self.button2.clicked.connect(self.button_clicked)
+#
+#         self.setFixedSize(400,300)#QSize(400,300)
+#
+#         # self.setCentralWidget(self.button1)
+#         self.button1.pos()
+#         #self.button2.show()
+#
+#     def button_clicked(self):
+#         self.button1.setText('Clicked!')
+#         self.button1.setEnabled(False)
+
+
+#
+# app = QApplication(sys.argv)
+# window = MainWindow()
+# window.show()
+# app.exec()
+
+# from random import choice
+#
+# win_titles = ['My App', 'Something went wrong', 'Still my App', 'My App']
+#
+#
+# class MainWindow(QMainWindow):
+#     def __init__(self):
+#         super().__init__()
+#         self.setWindowTitle('My App')
+#         self.n_times_clickes = 0
+#         self.button = QPushButton('Press Me!')
+#         self.button.clicked.connect(self.button_clicked)
+#         self.windowTitleChanged.connect(self.win_changed)
+#
+#         self.setFixedSize(400,300)#QSize(400,300)
+#
+#         self.setCentralWidget(self.button)
+#
+#     def button_clicked(self):
+#         print('Clicked')
+#         new_title = choice(win_titles)
+#         print('Set title', new_title)
+#         self.setWindowTitle(new_title)
+#
+#     def win_changed(self, win_title):
+#         print('Win title changed to ',win_title)
+#         if win_title == 'Something went wrong':
+#             self.button.setText('Ooopsi...')
+#             self.button.setDisabled(True)
+#
+#
+# app = QApplication(sys.argv)
+# window = MainWindow()
+# window.show()
+# app.exec()
+#
+#
+#
+#
+# class MainWindow(QMainWindow):
+#     def __init__(self):
+#         super(MainWindow,self).__init__()
+#         self.setWindowTitle('My App')
+#         widget = QLabel('Hello')
+#         font = widget.font()
+#         font.setPixelSize(30)
+#         widget.setFont(font)
+#         widget.setAlignment(Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter)
+#
+#         self.setCentralWidget(widget)
+#
+#
+# widget = QLabel('Hello')
+# widget = QLabel('1')
+# widget.setText('2')
+#
+#
+# app = QApplication(sys.argv)
+# window = MainWindow()
+# window.show()
+# app.exec()
+#
+# lst1 = [5,3,2]
+# lst2 = [5, 0, 0]
+#
+# print(list(np.array(lst1) - np.array(lst2)))
+
+#
+# import sys
+# from PyQt6.QtWidgets import QLabel, QTextEdit
+# from PyQt6.QtGui import QIcon, QAction
+#
+# class Example(QMainWindow):
+#     def __init__(self):
+#         super().__init__()
+#         self.initUI()
+#
+#     def initUI(self):
+#         textEdit = QTextEdit()
+#         self.setCentralWidget(textEdit)
+#
+#         exitAction = QAction(QIcon('1.png'),'Exit', self)
+#         exitAction.setShortcut('Ctrl+Q')
+#         exitAction.setStatusTip('Exit Application')
+#         exitAction.triggered.connect(self.close)
+#
+#         self.statusBar()
+#
+#         menubar = self.menuBar()
+#         fileMenu = menubar.addMenu('&File')
+#         fileMenu.addAction(exitAction)
+#
+#         toolbar = self.addToolBar('Exit')
+#         toolbar.addAction(exitAction)
+#
+#         self.setGeometry(300,300,400,400)
+#         self.setWindowTitle('Main Window')
+#         self.show()
+#
+# app = QApplication(sys.argv)
+# window = Example()
+# window.show()
+# app.exec()
+#
+
+#
+# import sys
+# from PyQt6.QtWidgets import QLabel, QTextEdit
+# from PyQt6.QtGui import QIcon, QAction
+#
+# class Win1(QWidget):
+#     def __init__(self):
+#         super(Win1, self).__init__()
+#         self.setWindowTitle('Win1')
+#         self.setMinimumWidth(200)
+#         self.setMinimumHeight(100)
+#         self.setGeometry(200,200,400,400)
+#
+#         self.button = QPushButton(self)
+#         self.button.setGeometry(100,100,100,100)
+#         self.button.setFlat(True)
+#
+#
+#         self.button.setText('OK')
+#         self.button.show()
+#
+# class Win2(QWidget):
+#     def __init__(self):
+#         super(Win2, self).__init__()
+#         self.setWindowTitle('Win2')
+#         self.setMinimumWidth(200)
+#         self.setMinimumHeight(100)
+#         self.setGeometry(200, 200, 400, 400)
+#
+#         self.button = QPushButton(self)
+#         self.button.setGeometry(50,50,50,50)
+#         self.button.setText('OK2')
+#
+#         self.button.show()
+#
+# class MainWin(QMainWindow):
+#     def __init__(self):
+#         super(MainWin, self).__init__()
+#         self.setWindowTitle('MainWindow')
+#         self.setGeometry(100,100,350,250)
+#
+#     def show_win1(self):
+#         self.w1 = Win1()
+#         self.w1.button.clicked.connect(self.show_win2)
+#         self.w1.button.clicked.connect(self.w1.close)
+#         self.w1.show()
+#
+#     def show_win2(self):
+#         self.w2 = Win2()
+#         self.w2.button.clicked.connect(self.show_win1)
+#         self.w2.button.clicked.connect(self.w2.close)
+#         self.w2.show()
+#
+#
+# app = QApplication(sys.argv)
+# window = MainWin()
+# window.show()
+# window.show_win1()
+# app.exec()
+#
+
+import sys
+from PyQt6.QtWidgets import QLabel, QTextEdit, QMdiArea, QMdiSubWindow
+from PyQt6.QtGui import QIcon, QAction
+
+#
+# class MDIWin(QMainWindow):
+#     count = 0
+#
+#     def __init__(self):
+#         super().__init__()
+#
+#         self.mdi = QMdiArea()
+#         self.setCentralWidget(self.mdi)
+#         bar = self.menuBar()
+#         file = bar.addMenu('File')
+#         file.addAction('New')
+#         file.addAction('Cascade')
+#         file.addAction('Tiled')
+#         file.triggered[QAction].connect(self.WindowTrig)
+#         self.setWindowTitle('MDI App')
+#
+#         sub = QMdiSubWindow()
+#         self.mdi.addSubWindow(sub)
+#         sub.setWidget(QTextEdit())
+#         sub.setWindowTitle('Sub' + str(MDIWin.count+1))
+#         sub2 = QMdiSubWindow()
+#         self.mdi.addSubWindow(sub2)
+#         sub2.setWidget(QTextEdit())
+#         sub2.setWindowTitle('Sub' + str(MDIWin.count+2))
+#         sub3 = QMdiSubWindow()
+#         self.mdi.addSubWindow(sub3)
+#         sub3.setWidget(QTextEdit())
+#         sub3.setWindowTitle('Sub' + str(MDIWin.count+3))
+#         self.mdi.tileSubWindows()
+#     def WindowTrig(self, p):
+#         if p.text() == 'New':
+#             MDIWin.count = MDIWin.count + 1
+#             sub = QMdiSubWindow()
+#             sub.setWidget(QTextEdit())
+#             sub.setWindowTitle('Sub'+str(MDIWin.count))
+#             self.mdi.addSubWindow(sub)
+#             sub.show()
+#
+#         if p.text() == 'Cascade':
+#             self.mdi.cascadeSubWindows()
+#         if p.text() == 'Tiled':
+#             self.mdi.tileSubWindows()
+#
+#
+# app = QApplication(sys.argv)
+# mdiwindow = MDIWin()
+# mdiwindow.show()
+# app.exec()
+
+#
+# class Anyclass:
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.__y = y
+# a = Anyclass(2, 3)
+# print(a.x)
+# #print(a.__y)
+# print(a._Anyclass__y)
+#
+#
+# class Person:
+#     def __init__(self, name):
+#         self.__name = name
+#         self.__age = 1
+#         self.item1 = 1
+#
+#     def __getattr__(self, item):
+#         return item.upper()
+#
+#     def __setattr__(self, key, value):
+#         print(key,value)
+#         self.__dict__[key] = value
+#
+#
+#     def set_age(self, age):
+#         self.__age = age
+#
+#     def get_age(self):
+#         return self.__age
+#
+#     def get_name(self):
+#         return self.__name
+#
+#     def display_info(self):
+#         print('Name:',self.__name, 'Age:', self.__age)
+#
+#
+# tom = Person('Tom')
+# tom.display_info()
+# tom.set_age(25)
+# tom.display_info()
+#
+# pass
+#
+# class Fool(object):
+#     bar = True
+#
+# Fool = type('Fool', (), {'bar':True})
+#
+# f = Fool()
+# class FoolChild(Fool):
+#     pass
+#
+# FoolChild = type('FoolChild', (Fool,),{})
+#
+# def echo_bar(self):
+#     print(self.bar)
+#
+# FoolChild = type('FoolChild', (Fool,),{'echo_bar':echo_bar})
+#
+# hasattr(Fool, 'echo_bar')
+# my_fool = FoolChild()
+# pass
+
+#
+# class AClass:
+#     def __init__(self, **kwargs):
+#
+#         for i,val in kwargs.items():
+#             self.__setattr__(i,val)
+#         #print(self.__dict__)
+#
+#     def __str__(self):
+#         res = f'{self.__class__.__name__}:  '
+#         for k,v in self.__dict__.items():
+#             res += f'{k}:{v}, '
+#         return  res[:-2]
+#
+#
+#     def __repr__(self):
+#         res = f'{self.__class__.__name__}:  '
+#         for k,v in self.__dict__.items():
+#             res += f'{k}:{v}, '
+#         return  res[:-2]
+#
+#
+#
+# print(AClass(a = 2,b = 3))
+# print(repr(AClass(a = 2,b = 3)))
+# print(AClass())
+# print(AClass(k = 'papapa'))
+
+#
+# class Singletone:
+#     def __new__(cls):
+#         if not hasattr(cls, 'instance'):
+#             cls.instance = super(Singletone, cls).__new__(cls)
+#         return cls.instance
+#
+# s1 = Singletone()
+# s2 = Singletone()
+#
+# print(s1 is s2)
+# s1.x = 123
+# print(s2.x)
+#
+# """ Пример программы по взаимодействию PushButton, LineEdit, Label"""
+#
+# import sys
+# from PyQt6.QtWidgets import (
+#     QMainWindow, QApplication,
+#     QLabel, QCheckBox, QComboBox, QLineEdit, QPushButton,
+#     QLineEdit, QSpinBox, QDoubleSpinBox, QSlider, QHBoxLayout, QVBoxLayout, QWidget, QTextEdit
+# )
+# from PyQt6.QtCore import Qt
+#
+#
+# class MainWindow(QMainWindow):
+#
+#     def __init__(self):
+#         super(MainWindow, self).__init__()
+#         self.tf = True
+#         self.qte = QTextEdit()
+#         self.qte.append('Results')
+#         self.text = 'Нажмите Enter!'
+#         self.setWindowTitle("My App")
+#         self.resize(300, 300)
+#
+#         layout = QVBoxLayout()
+#
+#         widget0 = QLabel("Введите число, ") # Label "Введите число"
+#         font = widget0.font()
+#         font.setPointSize(20)
+#         widget0.setFont(font)
+#         widget0.setAlignment(Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter)
+#
+#         widget1 = QLabel("нажмите Enter")  # Label "Нажимете Enter"
+#         font = widget1.font()
+#         font.setPointSize(20)
+#         widget1.setFont(font)
+#         widget1.setAlignment(Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter)
+#
+#         self.widget2 = QLineEdit() # LineEdit для ввода текста
+#         self.widget2.setMaxLength(10)
+#
+#         # widget.setReadOnly(True) # раскомментируйте, чтобы сделать доступным только для чтения
+#
+#         self.widget2.returnPressed.connect(self.return_pressed)
+#         self.widget2.selectionChanged.connect(self.selection_changed)
+#         self.widget2.textChanged.connect(self.text_changed)
+#         self.widget2.textEdited.connect(self.text_edited)
+#         self.widget2.setAlignment(Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter)
+#
+#         button = QPushButton("Результат!") # PushButton
+#         button.setCheckable(True)
+#         button.clicked.connect(self.the_button_was_clicked)
+#
+#         self.label_result = QLabel() # Label для получения результата
+#
+#         widgets = [widget0, widget1, self.widget2, button, self.label_result, self.qte]
+#         for w in widgets:
+#             layout.addWidget(w)
+#
+#         widget = QWidget()
+#         widget.setLayout(layout)
+#         self.setCentralWidget(widget)
+#
+#     def return_pressed(self):
+#         print("Return pressed!")
+#         self.text = self.widget2.text()
+#
+#     def selection_changed(self):
+#         print("Selection changed")
+#
+#     def text_changed(self, s):
+#         print("Text changed...")
+#         print(s)
+#
+#     def text_edited(self, s):
+#         print("Text edited...")
+#         print(s)
+#
+#     def the_button_was_clicked(self):
+#         print("Clicked!")
+#         self.label_result.setText(self.text)
+#         if self.tf:
+#             self.setWindowTitle('Result')
+#             self.tf = False
+#         else:
+#             self.tf = True
+#             self.setWindowTitle('MyApp')
+#
+#         try:
+#             res = str(eval(self.text))
+#             self.qte.append(res)
+#         except:
+#             pass
+#
+#         if self.tf:
+#             self.setWindowTitle('Res')
+#             self.tf = False
+#
+#
+# app = QApplication(sys.argv)
+# w = MainWindow()
+# w.show()
+# app.exec()
+#
+# class Node:
+#     def __init__(self, val):
+#         self.val = val
+#         self.next_node = None
+#
+# a = Node('A')
+# b = Node('B')
+# a.next_node = b
+# c = Node('C')
+# b.next_node = c
+#
+# d = Node('D')
+#
+# x =  a
+# print(x.val)
+# while x.next_node != None:
+#
+#     x = x.next_node
+#     print(x.val)
+#
+
+#
+import psycopg2
+# from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
+#
+# connection = psycopg2.connect(user = 'postgres', password = '1111')
+#
+# connection.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+#
+# cursor = connection.cursor()
+# sql_create_database = cursor.execute('create database sqlalchemy_tuts1')
+#
+# cursor.close()
+# connection.close()
+#
+# from sqlalchemy.ext.declarative import declarative_base
+# from sqlalchemy.orm import relationship, Session, sessionmaker
+# from sqlalchemy import create_engine, MetaData, Table, Integer, String, Column, DateTime, ForeignKey, Numeric, SmallInteger
+#
+#
+# engine = create_engine('postgresql+psycopg2://postgres:1111@localhost/sqlalchemy_tuts1')
+# session= Session(bind=engine)
+# Base = declarative_base()
+#
+# class Customer(Base):
+#     __tablename__ = 'customers'
+#     id = Column(Integer(), primary_key=True)
+#     first_name = Column(String(100), nullable=False)
+#     last_name = Column(String(100), nullable=False)
+#     user_name = Column(String(100), nullable=False)
+#     email = Column(String(100), nullable=False)
+# #
+# # Base.metadata.create_all(engine)
+#
+#
+#
+# c1 = Customer(first_name= 'Dmitry',
+#               last_name= 'Yatsenko',
+#               user_name= 'Yas',
+#               email = 'ooo@mail.ru')
+# c2 = Customer(first_name= 'ias',
+#               last_name= 'Yatsenko',
+#               user_name= 'Yas2',
+#               email = 'ooo@mail.ru')
+#
+# session.add(c1)
+# session.add(c2)
+# print(session.new)
+# session.commit()
+
 
 
